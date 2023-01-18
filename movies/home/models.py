@@ -16,6 +16,8 @@ class moviesinfo(models.Model):
     link480p=models.TextField(default='#', blank=True, null=True)
     link720p=models.TextField(default='#', blank=True, null=True)
     link1080p=models.TextField(default='#', blank=True, null=True)
+    def __str__(self):
+        return self.name
     
 class Contact(models.Model):
     name = models.CharField(max_length=122)
