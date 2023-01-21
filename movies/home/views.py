@@ -60,7 +60,11 @@ def home(request):
 def download(request,id=0):
     print(id)
     rec=moviesinfo.objects.filter(id=id).first()
-    mrec={'rec':rec}
+    coms=Contact.objects.filter(movieid=id).first()
+    mrec={
+        'rec':rec,
+        'coms':coms,
+        }
     return render(request,'download.html',mrec)
 
 def search(request):
@@ -101,3 +105,4 @@ def form(request,id=0):
         Contact(name=name, email=email, decs=desc).save()
         messages.success(request, 'Your message has been sent!')
     return redirect(download,id=id)
+
