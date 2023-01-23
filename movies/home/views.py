@@ -8,33 +8,33 @@ from rest_framework.response import Response
 from django.views.decorators.csrf import requires_csrf_token
 
 
-#_____________________________________________________________#
-@api_view(['GET'])                                            #                                                            
-def apiread(request):                                         #
-    info=moviesinfo.objects.all()                             #                
-    serialize=movieapi(info,many=True)                        #                    
-    return Response(serialize.data)                           #                
-@api_view(['GET'])                                            #
-def apireadone(request,id=0):                                 #    
-    rec=moviesinfo.objects.filter(id=id)                      #                                
-    serialize=movieapi(rec,many=True)                         #                    
-    return Response(serialize.data)                           #                
-@api_view(['GET'])                                            #
-def readsearch(request,name=''):                              #        
-    info=moviesinfo.objects.filter(name__icontains=name)      #                                    
-    serialize=movieapi(info,many=True)                        #                    
-    return Response(serialize.data)                           #                
-@api_view(['GET'])                                            #
-def searchyear(request,y=''):                                 #
-    info=moviesinfo.objects.filter(release_year__icontains=y) #                                    
-    serialize=movieapi(info,many=True)                        #                    
-    return Response(serialize.data)                           #                
-@api_view(['GET'])                                            #
-def searchgerne(request,gerne=''):                            #
-    info=moviesinfo.objects.filter(gerne__icontains=gerne)    #                                    
-    serialize=movieapi(info,many=True)                        #                    
-    return Response(serialize.data)                           #
-#______________________________________________________________#
+#_______________________________________________________________#
+@api_view(['GET'])                                              #                                                            
+def apiread(request):                                           #
+    info=moviesinfo.objects.all()                               #                
+    serialize=movieapi(info,many=True)                          #                    
+    return Response(serialize.data)                             #                
+@api_view(['GET'])                                              #
+def apireadone(request,id=0):                                   #    
+    rec=moviesinfo.objects.filter(id=id)                        #                                
+    serialize=movieapi(rec,many=True)                           #                    
+    return Response(serialize.data)                             #                
+@api_view(['GET'])                                              #
+def readsearch(request,name=''):                                #        
+    info=moviesinfo.objects.filter(name__icontains=name)        #                                    
+    serialize=movieapi(info,many=True)                          #                    
+    return Response(serialize.data)                             #                
+@api_view(['GET'])                                              #
+def searchyear(request,y=''):                                   #
+    info=moviesinfo.objects.filter(release_year__icontains=y)   #                                    
+    serialize=movieapi(info,many=True)                          #                    
+    return Response(serialize.data)                             #                
+@api_view(['GET'])                                              #
+def searchgerne(request,gerne=''):                              #
+    info=moviesinfo.objects.filter(gerne__icontains=gerne)      #                                    
+    serialize=movieapi(info,many=True)                          #                    
+    return Response(serialize.data)                             #
+#_______________________________________________________________#
 @api_view(['GET'])                                              #
 def readcon(request):                                           #
     return Response(con(Contact.objects.all(),many=True).data)  #
