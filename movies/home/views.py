@@ -6,6 +6,7 @@ from .serializers import movieapi,con
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.views.decorators.csrf import requires_csrf_token
+from datetime import datetime
 
 
 #_______________________________________________________________#
@@ -60,7 +61,7 @@ def home(request):
 def download(request,id=0):
     print(id)
     rec=moviesinfo.objects.filter(id=id).first()
-    coms=Contact.objects.filter(movieid=id).first()
+    coms=Contact.objects.filter(movieid=id)
     mrec={
         'rec':rec,
         'coms':coms,
@@ -93,16 +94,16 @@ def release_year(request,y=''):
     }
     return render(request,'home.html',context)
 
-
+date=datetime.now().strftime("H%:M% D%:M%:%Y")
 @requires_csrf_token
 def form(request,id=0):
     # print(id)
     if request.method=="POST":
+        id=request.POST.get('id')
         name = request.POST.get('name')
         email = request.POST.get('email')
         desc = request.POST.get('desc')
-        # print(name,'\n',email,'\n',desc)
-        Contact(name=name, email=email, decs=desc).save()
+        Contact(name=name, email=email, decs=desc, movieid=id, commentdate=date).save()
         messages.success(request, 'Your message has been sent!')
     return redirect(download,id=id)
 

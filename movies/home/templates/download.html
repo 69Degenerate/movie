@@ -54,6 +54,7 @@
                   <div class="col form-group">
                       <label for="name">Name</label>
                       <input type="text" class="form-control bg-dark text-white" id="name" name="name" placeholder="Enter your Name">
+                      <input type="hidden" name="id" value="{{rec.pk}}">
                   </div>
           
                   <div class="col form-group">
@@ -74,19 +75,19 @@
               <div class="card text-dark">
                 <div class="card-body p-4">
                   <p class="fw-light mb-4 pb-2">Comments section by users</p>
+                  {% for i in coms %}
                   <div class="d-flex flex-start">
-                    <div>
-                      <h6 class="fw-bold mb-1">{{coms.name}}</h6>
-                      <div class="d-flex align-items-center mb-3">
-                        <p class="mb-0">
-                          {{coms.commentdate}}
-                        </p>
-                      </div>
+                    <div class='container'>
+                      <h5 class="fw-bold mb-1">{{i.name}}</h5>
+                      <sup>{{i.commentdate}}</sup>
                       <p class="mb-0">
-                        {{coms.desc}}
+                        {{i.decs}}
                       </p>
                     </div>
+                    <br>
                   </div>
+                  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    {% endfor %}
                 </div>
               </div>
             </div>
