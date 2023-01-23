@@ -94,7 +94,7 @@ def release_year(request,y=''):
     }
     return render(request,'home.html',context)
 
-date=datetime.now().strftime("H%:M% D%:M%:%Y")
+date=datetime.now()
 @requires_csrf_token
 def form(request,id=0):
     # print(id)
@@ -103,7 +103,7 @@ def form(request,id=0):
         name = request.POST.get('name')
         email = request.POST.get('email')
         desc = request.POST.get('desc')
-        Contact(name=name, email=email, decs=desc, movieid=id, commentdate=date).save()
+        Contact(name=name, email=email, decs=desc, movieid=id, commentdate=datetime.now()).save()
         messages.success(request, 'Your message has been sent!')
     return redirect(download,id=id)
 

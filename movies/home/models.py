@@ -24,7 +24,8 @@ class Contact(models.Model):
     name = models.CharField(max_length=122)
     email = models.CharField(max_length=122)
     decs = models.TextField(default='#', blank=True, null=True)
-    movieid = models.ForeignKey(moviesinfo, related_name='movie', on_delete=models.CASCADE ,null=True)
+    # movieid = models.ForeignKey(moviesinfo, related_name='movie', on_delete=models.CASCADE ,null=True)
+    movieid=models.IntegerField(default=0)
     commentdate=models.CharField(max_length=50,default=date,blank=True,null=False)
     def __str__(self):
         return self.name
