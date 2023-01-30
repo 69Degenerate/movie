@@ -72,13 +72,13 @@
         <div class="container my-5 py-5">
           <div class="row d-flex justify-content-center">
             <div class="col-md-12 col-lg-10">
-              <div class="card text-dark">
+              <div class="card bg-dark text-white">
                 <div class="card-body p-4">
                   <p class="fw-light mb-4 pb-2">Comments section by users</p>
                   {% for i in coms %}
                   <div class="d-flex flex-start">
                     <div class='container'>
-                      <h5 class="fw-bold mb-1">{{i.name}}</h5>
+                      <h7 class="fw-bold mb-1">{{i.name}}</h7></br>
                       <sup>{{i.commentdate}}</sup>
                       <p class="mb-0">
                         {{i.decs}}
