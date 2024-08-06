@@ -133,5 +133,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "https://moviespaceproj.herokuapp.com",
     "http://127.0.0.1:5500",
-    "https://gitofvishal.github.io"
+    "https://gitofvishal.github.io",
+    "http://sitesforvishal.pythonanywhere.com"
 ]
