@@ -138,6 +138,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://movie-2wia.onrender.com',
-    "http://sitesforvishal.pythonanywhere.com",
+    'movie-2wia.onrender.com',
+    "sitesforvishal.pythonanywhere.com",
 ]
