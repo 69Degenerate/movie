@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-fbquv9%-!^dqel+%ftwl$&$2ft159u^$rxbd%f6#-zma^+sw=b
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://moviespaceproj.herokuapp.com'
+    'https://moviespaceproj.herokuapp.com',"movie-2wia.onrender.com"
 ]
 
 
