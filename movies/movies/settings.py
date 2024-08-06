@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-fbquv9%-!^dqel+%ftwl$&$2ft159u^$rxbd%f6#-zma^+sw=b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'https://moviespaceproj.herokuapp.com'
+]
 
 
 # Application definition
@@ -138,6 +140,5 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'movie-2wia.onrender.com',
-    "sitesforvishal.pythonanywhere.com",
+    'https://moviespaceproj.herokuapp.com'
 ]
