@@ -135,11 +135,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "https://movie-2wia.onrender.com",
     "http://sitesforvishal.pythonanywhere.com",
-    "https://resulting-rochelle-69degenerates-d6e343d4.koyeb.app/"
+    "https://resulting-rochelle-69degenerates-d6e343d4.koyeb.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://movie-2wia.onrender.com',
-    "https://resulting-rochelle-69degenerates-d6e343d4.koyeb.app/"
+    "https://resulting-rochelle-69degenerates-d6e343d4.koyeb.app"
 
 ]
